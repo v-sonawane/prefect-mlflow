@@ -1,0 +1,56 @@
+###
+### A complete description of a Prefect Deployment for flow 'train-model'
+###
+name: wine-quality-test
+description: null
+version: f517a2fb1b9457e7a2021de174ccee5d
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags:
+- tutorial
+parameters: {}
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: train-model
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: bd9bcb3e-2af7-4bab-a7b4-35131f05f09e
+  _block_document_name: anonymous-9edb49ce-a35c-4e5d-bda0-8e26aff0a4ee
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage: null
+path: /home/vaishnavi-sonawane-itp/development/prefect-mlflow
+entrypoint: model_training.py:train_model
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    mlflow_experiment_id:
+      title: mlflow_experiment_id
+      position: 0
+    alpha:
+      title: alpha
+      default: 0.5
+      position: 1
+    l1_ratio:
+      title: l1_ratio
+      default: 0.5
+      position: 2
+  required:
+  - mlflow_experiment_id
+  definitions: null
+timestamp: '2023-06-14T19:19:33.338169+00:00'
